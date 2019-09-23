@@ -1,0 +1,8 @@
+<div class="header">
+    <h1>{{title}}</h1>
+    <button [routerLink]="['/home']">Home</button>&nbsp;&nbsp;
+    <button [routerLink]="['/home/products']">Product List</button>&nbsp;&nbsp;
+    <button [routerLink]="['/home/products/new']">Product Creation</button>
+</div>
+<hr>
+<router-outlet></router-outlet>

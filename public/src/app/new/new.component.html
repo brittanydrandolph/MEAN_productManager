@@ -1,0 +1,11 @@
+<h3>Create a New Product</h3>
+<form (submit)="createSubmit()">
+    <h4 color:red *ngIf="!title.valid">The title must have at least 4 characters.</h4>
+    <h4 color:red *ngIf="!price.valid">The product must have a price of at least 0.</h4>
+
+    Title: <input type="text" name="title" [(ngModel)]="newProduct.title" value="newProduct.title" required minlength="4" #title="ngModel">
+    Price: <input type="text" name="price" [(ngModel)]="newProduct.price" value="newProduct.price" required min="0" #price="ngModel">
+    Image URL: <input type="text" name="image" [(ngModel)]="newProduct.image" value="newProduct.image" required #image="ngModel">
+    <input *ngIf="title.valid && price.valid" type="submit" value="Add Product">
+    <!-- <button (click)="deleteProduct(product._id)">Delete</button> -->
+</form>
